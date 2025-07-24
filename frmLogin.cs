@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +24,7 @@ namespace EmploymentManagement
         {
             SqlConnection con = new SqlConnection("Data Source=LAPTOP-FUJITSU;Initial Catalog=EmployeeManagementDB;Integrated Security=True;TrustServerCertificate=True");
             con.Open();
-            string query = "SELECT COUNT(*) FROM Register WHERE username=@username AND password=@password";
+            string query = "SELECT COUNT(*) FROM LoginTB WHERE username=@username AND password=@password";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", txtUser.Text);
             cmd.Parameters.AddWithValue("@password", txtPass.Text);
