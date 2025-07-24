@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,9 +21,9 @@ namespace EmploymentManagement
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=LAPTOP-FUJITSU;Initial Catalog=Register;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-FUJITSU;Initial Catalog=EmployeeManagementDB;Integrated Security=True;TrustServerCertificate=True");
             con.Open();
-            string insertQuery = "INSERT INTO register VALUES (@fName, @lName, @gender, @email, @phone, @username, @password)";
+            string insertQuery = "INSERT INTO LoginTB VALUES (@fName, @lName, @gender, @email, @phone, @username, @password)";
             SqlCommand cmd = new SqlCommand(insertQuery, con);
             cmd.Parameters.AddWithValue("@fName", txtfName.Text);
             cmd.Parameters.AddWithValue("@lName", txtlName.Text);
